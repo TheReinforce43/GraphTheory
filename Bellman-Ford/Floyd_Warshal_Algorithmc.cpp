@@ -47,6 +47,8 @@ void Floyd_Warshall()
         {
             for (int j = 1; j <= x; j++)
             {
+                if (dist[i][k] == INF || dist[k][j] == INF)
+                    continue;
                 dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
             }
         }

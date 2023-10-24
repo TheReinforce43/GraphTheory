@@ -68,6 +68,8 @@ public:
 };
 void Krushkal(priority_queue<edge, vector<edge>, cmp> pq)
 {
+    vector<edge> edge_list;
+
     while (!pq.empty())
     {
         edge row = pq.top();
@@ -80,9 +82,16 @@ void Krushkal(priority_queue<edge, vector<edge>, cmp> pq)
         {
             make_union(u, v);
             min_cost += w;
+            edge_list.push_back(row);
         }
     }
+    for(edge values:edge_list)
+    {
+        cout<<values.a<<" "<<values.b<<" "<<values.w<<"\n";
+    }
 }
+
+
 
 int main()
 {
